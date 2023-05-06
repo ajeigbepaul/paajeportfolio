@@ -11,7 +11,7 @@ function Experience({experiences}: Props) {
       <h3 className="absolute top-20 uppercase tracking-[10px] md:tracking-[20px] text-gray-500 text-2xl">
         Experience
       </h3>
-      <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory absolute top-20 scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80 scrollbar-thin">
+      <div className="w-full flex space-x-5 overflow-x-scroll p-10 snap-x snap-mandatory absolute top-20 scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80 scrollbar-thin md:mt-10">
         {experiences.map((experience) => (
           <ExperienceCard key={experience._id} experience={experience}/>
         ))}

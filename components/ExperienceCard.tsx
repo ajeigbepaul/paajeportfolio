@@ -7,7 +7,7 @@ type Props = {experience:Experiences}
 
 export default function ExperienceCard({experience}: Props) {
   return (
-    <article className="flex flex-col rounded-lg space-y-4 flex-shrink-0 items-center w-[250px] md:w-[350px] xl:w-[500px] snap-center bg-[#292929] hover:opacity-100 opacity-40 cursor-pointer transition-opacity duration-200 overflow-hidden py-5">
+    <article className="flex flex-col rounded-lg space-y-4 flex-shrink-0 items-center w-[150px] md:w-[450px] snap-center bg-[#292929] hover:opacity-100 opacity-60 cursor-pointer transition-opacity duration-200 overflow-hidden py-3">
       <motion.img
         src={urlFor(experience?.companyImage).url()}
         initial={{
@@ -22,7 +22,7 @@ export default function ExperienceCard({experience}: Props) {
           duration: 1.2,
         }}
         viewport={{ once: true }}
-        className="w-24 h-24 rounded-full xl:w-[100px] xl:h-[100px] object-cover object-center"
+        className="w-12 h-12 rounded-full xl:w-[70px] xl:h-[100px] object-cover object-center bg-slate-50 p-2"
       />
       <div className="px-0 md:px-10">
         <h4 className="text-2xl font-light">{experience?.jobTitle}</h4>
@@ -30,9 +30,9 @@ export default function ExperienceCard({experience}: Props) {
         <div className="flex">
           {experience.technology.map((tech) => (
             <img
-            key={tech?._id}
+              key={tech?._id}
               src={urlFor(tech?.image).url()}
-              className="h-10 w-10 rounded-full"
+              className="h-5 w-5 rounded-full"
               alt="cssicon"
             />
           ))}
@@ -43,7 +43,7 @@ export default function ExperienceCard({experience}: Props) {
             ? "Present"
             : new Date(experience?.dateEnded).toDateString()}
         </p>
-        <ul className="list-disc space-y-2 text-sm ml-4">
+        <ul className="list-disc space-y-1 text-xs ml-0 max-h-10 overflow-y-scroll pr-2 scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80 scrollbar-thin">
           {experience?.points.map((point, i) => (
             <li key={i}>{point}</li>
           ))}

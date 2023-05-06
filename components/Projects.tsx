@@ -18,11 +18,11 @@ function Projects({projects}: Props) {
         Projects
       </h3>
 
-      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 pt-24 md:pt-2 scrollbar scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80">
+      <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 pt-14 md:pt-2 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80">
         {projects.map((project, i) => (
           <div
             key={project?._id}
-            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-10 h-screen"
+            className="w-screen flex-shrink-0 snap-center flex flex-col space-y-2 md:space-y-5 items-center justify-center p-10 md:p-10 h-screen"
           >
             <motion.img
               initial={{
@@ -35,17 +35,21 @@ function Projects({projects}: Props) {
               src={urlFor(project.image).url()}
               className="w-72 rounded-lg"
             />
-            <div className="space-y-2 px-0 md:px-10 max-w-5xl">
-              <h4 className="text-xl font-semibold text-center">
+            <div className="space-y-1 md:space-y-2 px-0 md:px-10 max-w-5xl">
+              <h4 className="text-xs md:text-xl font-semibold text-center">
                 <span className="underline decoration-[#f68]/80">
                   {i + 1} of {projects.length}
                 </span>{" "}
                 {project?.title}
               </h4>
-              <div className='flex items-center justify-center space-x-2'>
-              {project?.technologies.map(tech=>
-              <img key={tech?._id} 
-              src={urlFor(tech.image).url()} className="h-6 w-6"/>)}
+              <div className="flex items-center justify-center space-x-2">
+                {project?.technologies.map((tech) => (
+                  <img
+                    key={tech?._id}
+                    src={urlFor(tech.image).url()}
+                    className="h-6 w-6"
+                  />
+                ))}
               </div>
               <p className="text-sm text-center md:text-left">
                 {project?.summary}

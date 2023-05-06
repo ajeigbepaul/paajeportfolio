@@ -24,9 +24,9 @@ type Props = {
 // {pageInfo, experiences, projects, skills, socials}:Props
 export default function Home({ pageInfo, experiences, projects, skills, socials }: Props) {
   return (
-    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll overlow-x-hidden z-0 scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80 scrollbar-thin">
+    <div className="bg-[rgb(36,36,36)] text-white h-screen snap-y snap-mandatory overflow-y-scroll z-0 scrollbar-track-gray-400/20 scrollbar-thumb-[#f68]/80 scrollbar-thin overflow-x-hidden">
       <Head>
-        <title>{pageInfo?.name} - Portfolio</title>
+        <title> Portfolio </title>
       </Head>
       <Header socials={socials} />
       <section id="hero" className="snap-start">
@@ -37,11 +37,11 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
       </section>
       {/* Experience */}
       <section id="experience" className="snap-center pb-10">
-        <Experience experiences={experiences}/>
+        <Experience experiences={experiences} />
       </section>
       {/* Skills */}
       <section id="skills" className="snap-start">
-        <Skillz skills={skills}/>
+        <Skillz skills={skills} />
       </section>
       {/* Projects */}
       <section id="projects" className="snap-start">
@@ -55,8 +55,8 @@ export default function Home({ pageInfo, experiences, projects, skills, socials 
         <footer className="sticky bottom-5 w-full cursor-pointer">
           <div className="flex items-center justify-center">
             <img
-              className="h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
-              src="https://media.licdn.com/dms/image/D4D03AQHbxztwXVOIQg/profile-displayphoto-shrink_800_800/0/1675335118967?e=1680739200&v=beta&t=rUW95sRj7sazP0nPWvGSmQiN6DbZ276dRq3xBaMEotY"
+              className="h-6 w-6 md:h-10 md:w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer"
+              src="https://media.licdn.com/dms/image/D4D03AQHbxztwXVOIQg/profile-displayphoto-shrink_800_800/0/1675335118967?e=1688601600&v=beta&t=s9QgRuMHzVptP1_NWkqeIarKP7h4ymkbxpbZNkd11W4"
               alt=""
             />
           </div>

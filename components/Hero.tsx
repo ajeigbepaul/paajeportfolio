@@ -14,7 +14,10 @@ export default function Hero({pageInfo}: Props) {
   const [text, count] = useTypewriter({
     words: [`Hi, I am ${pageInfo?.name}`, 
     "I code for a living.tsx", 
-    "<Frontend/>","React JS, Next Js, Tailwind CSS"],
+    "<Frontend/>",
+    "React JS, Next Js",
+    " Material UI, Tailwind CSS",
+    "UI/UX with Figma"],
     loop: true,
     delaySpeed: 2000,
   });
@@ -24,7 +27,7 @@ export default function Hero({pageInfo}: Props) {
       <img
         className="relative rounded-full h-32 w-32 mx-auto object-cover"
         src={urlFor(pageInfo?.heroimage).url()}
-        alt=''
+        alt=""
       />
       <div className="z-20">
         <h2 className="text-sm uppercase text-gray-500 pb-2 tracking-[8px]">
@@ -34,9 +37,11 @@ export default function Hero({pageInfo}: Props) {
           <span className="mr-3">{text}</span>
           <Cursor cursorColor="#f68" />
         </h1>
-        <div className="pt-4">
+        <div className=" pt-1 md:pt-4 ">
           <Link href="#about">
-            <button className="heroButton">About</button>
+            <button className="heroButton">
+              About
+            </button>
           </Link>
           <Link href="#experience">
             <button className="heroButton">Experience</button>
