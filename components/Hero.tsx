@@ -1,4 +1,4 @@
-import { urlFor } from "@/sanity";
+import urlFor from "@/lib/urlFor";
 import { PageInfo } from "@/typings";
 import Image from "next/image";
 import Link from "next/link";

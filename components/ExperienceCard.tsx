@@ -1,8 +1,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Experiences } from '@/typings';
-import { urlFor } from '@/sanity';
-
+import urlFor from "@/lib/urlFor";
 type Props = {experience:Experiences}
 
 export default function ExperienceCard({experience}: Props) {

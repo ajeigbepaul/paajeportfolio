@@ -1,6 +1,7 @@
 import type { NextApiRequest,NextApiResponse } from "next";
 import {groq} from "next-sanity"
-import { sanityClient } from "@/sanity";
+// import { sanityClient } from "@/sanity";
+import { client } from "@/lib/sanity.client";
 import { Project } from "@/typings";
 
 const query = groq`
@@ -11,6 +12,6 @@ type Data = {
     projects:Project[]
 }
 export default async function handler(req:NextApiRequest, res:NextApiResponse){
-    const projects:Project[] = await sanityClient.fetch(query)
+    const projects:Project[] = await client.fetch(query)
     res.status(200).json({projects})
 }
